@@ -1,4 +1,12 @@
 site_name: Docs
 theme:
   name: material
-use_directory_urls: true
+use_directory_urls: false
+nav:
+    - Home: 'index.md'
+    - 'Fortinet':
+        - 'Automated Certificate Renewal': 'fortinet/AutomatedCertificateRenewal/index.md'
+    - 'Intune':
+        - 'Create App Deployment Msi': 'intune/CreateAppDeploymentMsi/index.md'
+    - 'Wordpress':
+        - 'Send Gravity Forms Submissions to Excel': 'wordpress/SendGravityFormsSubmissionstoExcel/index.md'
