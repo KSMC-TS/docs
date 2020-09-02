@@ -15,9 +15,10 @@ Updated:    09/01/2020
 ## Save and Edit Script
 1. Download the script that will perform the automated certificate renewal from Github to the workstation/server that you will run the script and renewal process from.
 
-       Invoke-RestMethod -Method Get `
-       -Uri "https://raw.githubusercontent.com/KSMC-TS/letsencrypt-scripts/main/certify/Install-LECertify-Fortigate.ps1" `
-       -OutFile "C:\Scripts\Install-LECertify-Fortigate.ps1"
+        Invoke-RestMethod -Method Get `
+        -Uri "https://raw.githubusercontent.com/KSMC-TS/letsencrypt-scripts/main/certify/Install-LECertify-Fortigate.ps1" `
+        -OutFile "C:\Scripts\Install-LECertify-Fortigate.ps1"
+
 2. Edit the script to update the `$fortigateAddress` variable to the FQDN or IP address used to access the Fortigate firewall.
 3. Edit the script to update the `$fortigateAdminPort` variable to the port used to access the web interface of the admin page.
 4. Edit the script to update the `$encryptedToken` to the path to the encrypted API token file (creating this file will be covered).
