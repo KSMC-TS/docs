@@ -1,0 +1,612 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>Automated Certificate Renewal - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automated-certificate-renewal-on-fortigate-firewalls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Docs" class="md-header-nav__button md-logo" aria-label="Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Automated Certificate Renewal
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/KSMC-TS/docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs" class="md-nav__button md-logo" aria-label="Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/KSMC-TS/docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Fortinet
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Fortinet" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Fortinet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Automated Certificate Renewal
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="index.html" title="Automated Certificate Renewal" class="md-nav__link md-nav__link--active">
+      Automated Certificate Renewal
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-and-edit-script" class="md-nav__link">
+    Save and Edit Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-configure-certify-the-web" class="md-nav__link">
+    Install and Configure Certify The Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-fortigate-api-token" class="md-nav__link">
+    Create Fortigate API Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypt-fortigate-api-token" class="md-nav__link">
+    Encrypt Fortigate API Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-certificate-and-validate-installation" class="md-nav__link">
+    Request Certificate and Validate Installation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Intune
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Intune" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Intune
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intune/CreateAppDeploymentMsi/index.html" title="Create App Deployment Msi" class="md-nav__link">
+      Create App Deployment Msi
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Wordpress
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Wordpress" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Wordpress
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wordpress/SendGravityFormsSubmissionstoExcel/index.html" title="Send Gravity Forms Submissions to Excel" class="md-nav__link">
+      Send Gravity Forms Submissions to Excel
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-and-edit-script" class="md-nav__link">
+    Save and Edit Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-configure-certify-the-web" class="md-nav__link">
+    Install and Configure Certify The Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-fortigate-api-token" class="md-nav__link">
+    Create Fortigate API Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypt-fortigate-api-token" class="md-nav__link">
+    Encrypt Fortigate API Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-certificate-and-validate-installation" class="md-nav__link">
+    Request Certificate and Validate Installation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/KSMC-TS/docs/edit/master/docs/fortinet/AutomatedCertificateRenewal/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="automated-certificate-renewal-on-fortigate-firewalls">Automated Certificate Renewal on Fortigate Firewalls</h1>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>DNS is hosted with one of the following providers: <a href="https://docs.certifytheweb.com/docs/dns/validation#dns-api-providers">docs.certifytheweb.com/docs/dns/validation</a>. This guide will cover setup with Cloudflare. Refer to CertifyTheWeb's documentation for setup with other providers.</li>
+<li>A server that you can run the CertifyTheWeb service on.</li>
+<li>That same server will need access to the Fortigate firewall via HTTPS.</li>
+</ul>
+<h2 id="save-and-edit-script">Save and Edit Script</h2>
+<ol>
+<li>
+<p>Download the script that will perform the automated certificate renewal from Github to the workstation/server that you will run the script and renewal process from.</p>
+<pre><code>Invoke-RestMethod -Method Get `
+-Uri "https://raw.githubusercontent.com/KSMC-TS/letsencrypt-scripts/main/certify/Install-LECertify-Fortigate.ps1" `
+-OutFile "C:\Scripts\Install-LECertify-Fortigate.ps1"
+</code></pre>
+</li>
+<li>
+<p>Edit the script to update the <code>$fortigateAddress</code> variable to the FQDN or IP address used to access the Fortigate firewall.</p>
+</li>
+<li>Edit the script to update the <code>$fortigateAdminPort</code> variable to the port used to access the web interface of the admin page.</li>
+<li>Edit the script to update the <code>$encryptedToken</code> to the path to the encrypted API token file (creating this file will be covered).</li>
+<li>Save the changes to the script.</li>
+</ol>
+<h2 id="install-and-configure-certify-the-web">Install and Configure Certify The Web</h2>
+<ol>
+<li>Download and install Certify The Web on the server you will be running the script on. Certify The Web can be downloaded <a href="https://certifytheweb.com/home/download">here</a>.</li>
+<li>Login to Cloudflare and navigate to <strong>My Profile</strong>.</br> <img alt="Cloudflare, My Profile" src="CloudflareProfile.png" /></li>
+<li>Select <strong>API Tokens</strong> and then <strong>Create Token</strong>.</br> <img alt="Cloudflare, Create Token" src="CreateToken.png" /></li>
+<li>Leverage the API token templates to create a template for <strong>Edit zone DNS</strong>.</li>
+<li>Edit the <strong>Token name</strong>, <strong>Permissions</strong>, <strong>Zone Resources</strong>, <strong>IP Address Filtering</strong>, and <strong>TTL</strong> appropriately. Limit the zone to the specific DNS zone and limit the IP address to the public address of the server you will be running CertifyTheWeb from.</br> <img alt="Set permissions for Cloudflare Token" src="TokenPermissions.png" /></li>
+<li>Validate the options and <strong>Create Token</strong>.</li>
+<li>Save the API token created for use with CertifyTheWeb in the coming steps. This will only be shown once so make sure to copy it but protect this token as it grants anyone with access permission to make DNS changes within the permissions set earlier.</br> <img alt="Copy API token for later use" src="CopyAPIToken.png" /></li>
+<li>Lauch Certify The Web and create a <strong>New Certificate</strong>. Choose Let's Encrypt as the Certificate Authority and an email to receive certificate related notifications at.</br> <img alt="New Certificate" src="NewCertificate.png" /></li>
+<li>Choose a name for the certificate, then <strong>Add domains to certificate</strong>. Once all the appropriate domains have been added, you can continue on to <strong>Authorization</strong>.</br> <img alt="Add domains then continue to Authorization" src="AddDomainThenAuthorization.png" /></li>
+<li>Select <strong>dns-01</strong> for the <strong>Challenge Type</strong>. Select the <strong>DNS Update Method</strong>. For this example, we'll be using Cloudflare. Select <strong>New</strong> on the credentials field.</br> <img alt="dns-01 as challenge type, Cloudflare DNS API as DNS Update Method, select new credential" src="DNSChallengeandCredentials.png" /></li>
+<li>Choose a <strong>Credential Name</strong> and enter the <strong>API Token</strong>.</br> <img alt="API Token entry" src="APICredentials.png" /></li>
+<li>Back on Cloudflare, navigate to the domain's <strong>Overview</strong> page and scroll down to the API field on the right. Copy the <strong>Zone ID</strong> and paste into the <strong>DNS Zone Id</strong> field in Certify The Web.</br> <img alt="Cloudflare domain Zone Id" src="CloudflareZoneId.png" /></li>
+<li>Within Certify The Web, you can move to the <strong>Deployment</strong> section and select <strong>Deployment Tasks</strong>. Under this section, select <strong>Add</strong> to configure the post-deployment Powershell script.</br> <img alt="Deployment, Deployment Tasks, Add task" src="DeploymentTasks.png" /></li>
+<li>Select <strong>Run Powershell Script</strong>.</li>
+<li>On the next page, the <strong>General Settings</strong> as the defaults will work. Select <strong>Task Parameters</strong> and enter the path to the script saved from Github in the earlier section.</br> <img alt="Task Parameters, Script location" src="RunAPowershellScript.png" /></li>
+<li>Click <strong>Save</strong> on the new certificate dialog.</li>
+</ol>
+<h2 id="create-fortigate-api-token">Create Fortigate API Token</h2>
+<ol>
+<li>Login to the Fortigate and navigate to <strong>System</strong>, then <strong>Admin Profiles</strong>.</li>
+<li>Create a new profile with <strong>Read/Write</strong> access to the <strong>System</strong> and <strong>VPN</strong>. Save this profile.</br> <img alt="Fortigate, new admin profile, system read/write, VPN read/write" src="FortigateAdminProfile.png" /></li>
+<li>Navigate to the <strong>Administrators</strong> blade and create a new <strong>REST API Admin</strong>.</li>
+<li>Select a username and the administrator profile just created. Turn off <strong>PKI Group</strong>. Enter the IP address of the server running the script and Certify The Web renewal in the <strong>Trusted Hosts</strong> field.</br> <img alt="New REST API Admin, set username, administrator profile, PKI group, and trusted hosts." src="NewRESTAPIAdmin.png" /></li>
+<li>When you create this administrator, you will be taken to a page that has the API key for that user. Note this API key as it will be used in the next section and is only shown once.</li>
+</ol>
+<h2 id="encrypt-fortigate-api-token">Encrypt Fortigate API Token</h2>
+<ol>
+<li>To encrypt the token, you will need to leverage PsExec to run Powershell in the <strong>SYSTEM</strong> context. PsExec can be downloaded from <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">here</a>.</li>
+<li>Once downloaded and extracted, launch a Powershell window as an administrator. Run <code>.\PsExec.exe -s powershell.exe</code>. This should launch a Powershell session as the <strong>SYSTEM</strong> user.</li>
+<li>Run the following commands where <code>apitoken</code> is the token created in the previous section and <code>tokenfile.txt</code> is the token file specified in the first section.<pre><code>$token = Read-Host -AsSecureString
+$tokenFile = ConvertFrom-SecureString -SecureString $token -Key (1..16)
+$tokenFile | Set-Content "C:\scripts\tokenfile.txt"
+</code></pre>
+</li>
+</ol>
+<h2 id="request-certificate-and-validate-installation">Request Certificate and Validate Installation</h2>
+<ol>
+<li>On Certify The Web, you can select the certificate that was created earlier on and select <strong>Request Certificate</strong>. This will immediately request a new certificate and go through the process of issuing the certificate and applying to the administrative interface and VPN interface of the Fortigate.</li>
+<li>Any issues with the script will show up in the Certify The Web log files.</li>
+<li>You can validate installation by attempting to navigate to the administrative or VPN interfaces of the Fortigate.</li>
+<li>Certify The Web will automatically handle any renewals required for the certificate. Certify The Web can be set to issue certificates during certain hours by disabling and enabling the service but that is outside of the scope of this guide.</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../index.html" title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../intune/CreateAppDeploymentMsi/index.html" title="Create App Deployment Msi" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Create App Deployment Msi
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["instant"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
