@@ -6,9 +6,5 @@
 }
 
 .md-footer {
-    background-color: #70777E;
-}
-
-.md-footer-meta {
-    background-color: #343E48;
+    background-color: var(--md-primary-fg-color--dark);
 }
